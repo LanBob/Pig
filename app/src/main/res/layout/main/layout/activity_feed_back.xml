@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:text="问题标题  (必填 *) 30字以内"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/feedback_title"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/textview_border"
+        android:hint="输入问题标题……"
+        android:maxLength="30"
+        android:paddingLeft="20dp"
+        android:textSize="17sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:text="问题描述  (必填 *)      100字以内"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/feedback_body"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/textview_border"
+        android:gravity="top"
+        android:hint="输入你的问题描述……"
+        android:maxLength="100"
+        android:padding="40dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/feedback_buttom"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="50dp"
+        android:background="#6EDDD9"
+        android:gravity="center"
+        android:text="提交反馈"
+        android:textSize="20sp" />
+
+</LinearLayout>

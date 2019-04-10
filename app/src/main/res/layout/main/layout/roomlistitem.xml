@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp">
+
+    <ImageView
+        android:id="@+id/roomLink"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="30dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/home_nine_explore" />
+
+    <TextView
+        android:id="@+id/roomId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/roomLink"
+        android:text="XXX房间"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/roomType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/roomId"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/roomLink"
+        android:text="母猪"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/pigNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/roomId"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/roomLink"
+        android:text="34/55"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_below="@id/roomLink"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#7E8F8D" />
+
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".anno.Page">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:text="震惊！他竟然是马儿儿子"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_below="@id/title"
+        android:layout_marginLeft="50dp"
+        android:text="发布时间:1996-11-11"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/readCount"
+        android:layout_below="@id/title"
+        android:layout_toRightOf="@id/time"
+        android:layout_marginLeft="50dp"
+        android:text="阅读量:10"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_below="@id/readCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        android:text="  他竟然他竟然是马他他竟然是马儿儿子他竟然是马儿儿子他竟然是马儿儿子他竟然是马儿儿子竟然是马儿儿子他竟然是马儿儿子儿他竟然是马儿儿子儿子他竟然是马儿儿子是马儿儿子 "
+        android:textSize="19dp" />
+
+</RelativeLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="30dp"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:text="房间名称："-->
+        <!--android:textSize="18sp" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/addName"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_marginLeft="30dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:hint="填写名称"-->
+        <!--android:layout_marginRight="30dp"-->
+        <!--android:background="@drawable/textview_border"-->
+        <!--android:textAlignment="center" />-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="猪的种类："
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/addPigType"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:hint="限填公猪/母猪"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/textview_border"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="猪的数量："
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/pigNum"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:hint="房间的猪的数量"
+        android:background="@drawable/textview_border"
+        android:textAlignment="center" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="房间容量："
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/homeSize"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:hint="房间的容量"
+        android:background="@drawable/textview_border"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/add"
+        android:text="确定新增"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:textSize="19sp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+</LinearLayout>

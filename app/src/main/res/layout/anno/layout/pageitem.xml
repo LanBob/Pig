@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/pageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:text="震惊！他竟然是马儿儿子"
+        android:textSize="22sp" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/pageIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pageTitle"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:maxLines="2"
+        android:text="他竟然他竟然是马他他竟然他竟然是马他他竟然是马儿儿子他竟然是马儿儿子他竟然是马儿儿子他竟然是马儿儿子竟然是马儿儿子他竟然是马儿儿子儿他竟然是马儿儿子儿子他竟然是马儿儿子是马儿儿子他竟然是马儿儿子他竟然是马儿儿子他竟然是马儿儿子他竟然是马儿儿子竟然是马儿儿子他竟然是马儿儿子儿他竟然是马儿儿子儿子他竟然是马儿儿子是马儿儿子"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/pageDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pageIntro"
+        android:layout_marginLeft="40dp"
+        android:text="发布时间：1997-11-13"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/pageReaderCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pageIntro"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/pageDate"
+        android:text="阅读量：100"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_below="@id/pageReaderCount"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#7E8F8D" />
+
+</RelativeLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".mine.Login">
+
+
+    <!--最正常的登录-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/acount"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/textview_border"
+            android:hint="输入账号"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/oldpassWord"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/acount"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/textview_border"
+            android:hint="旧密码"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/passWord"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/oldpassWord"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/textview_border"
+            android:hint="新密码"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/rePassWord"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/passWord"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/textview_border"
+            android:hint="再次确认密码"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/change"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/rePassWord"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp"
+            android:textSize="19sp"
+            android:text="确认修改" />
+
+        <!--<TextView-->
+            <!--android:id="@+id/changePassWord"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/change"-->
+            <!--android:layout_marginLeft="50dp"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:text="登录" />-->
+
+    </RelativeLayout>
+
+</LinearLayout>

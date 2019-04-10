@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_marginLeft="30dp"
+        android:id="@+id/paramName"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="二氧化碳"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/ParamValue"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_toRightOf="@id/paramName"
+        android:layout_width="wrap_content"
+        android:text="40.4"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ParamValue"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:background="#7E8F8D" />
+
+</RelativeLayout>
+
+
+
