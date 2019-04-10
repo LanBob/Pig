@@ -2,11 +2,13 @@ package com.lusr.pig.mine;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +19,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.itingchunyu.badgeview.BadgeTextView;
 import com.itingchunyu.badgeview.BadgeViewUtil;
+import com.lusr.pig.MainActivity;
 import com.lusr.pig.R;
 
 import com.lusr.pig.Util.commonAdapter.Com_Adapter;
@@ -99,13 +102,31 @@ public class Warn extends AppCompatActivity {
                             if(badgeViewUtil.getCount() > 0){
                                 badgeViewUtil.setCount(badgeViewUtil.getCount() - 1);
                             }
-                            homeList.remove(home);
+                            Call<ResponseBody> call = HttpMethods.getInstance()
+                                    .deleteAlarm(home.getId());
+                            call.enqueue(new Callback<ResponseBody>() {
+                                @Override
+                                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                                    try {
+                                        String res = response.body().string();
+                                        if(res != null && !"".equals(res)){
+                                            homeList.remove(home);
 //                                消除警报
-                            Toast.makeText(Warn.this, "消除警报", Toast.LENGTH_SHORT).show();
-                            adapter.notifyDataSetChanged();
+
+                                            adapter.notifyDataSetChanged();
+                                        }
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                                    Toast.makeText(Warn.this, "请稍后", Toast.LENGTH_SHORT).show();
+                                }
+                            });
                         }
                     });
-
                     holder.itemView.findViewById(R.id.detil).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -156,11 +177,23 @@ public class Warn extends AppCompatActivity {
 
     }
 
+//    @Override
+//    public void onBackPressed() {
+//        int i = badgeViewUtil.getCount();
+//        Intent intent1 = new Intent();
+//        intent1.putExtra("count",i+"");
+//        setResult(RESULT_OK,intent1);
+//        super.onBackPressed();
+//        finish();
+//    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home: //对用户按home icon的处理，本例只需关闭activity，就可返回上一activity，即主activity。
+
                 finish();
+
                 return true;
             default:
                 break;

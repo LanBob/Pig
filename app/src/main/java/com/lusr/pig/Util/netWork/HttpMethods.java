@@ -158,6 +158,9 @@ public class HttpMethods {
         return service.getAlarmList();
     }
 
+    public Call<ResponseBody> deleteAlarm(String homeId){
+        return service.deleteAlarm(homeId);
+    }
 
 //    /**
 //     * 新增参数

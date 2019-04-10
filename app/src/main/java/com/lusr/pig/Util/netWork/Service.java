@@ -86,4 +86,11 @@ public interface Service {
     @GET("Home/getAlarmList")
     Call<ResponseBody> getAlarmList();
 
+    @FormUrlEncoded
+    @POST("Home/deleteAlarm")
+    @Headers({"Content-Type:application/json;charset=UTF-8"})
+    Call<ResponseBody> deleteAlarm(@Field("homeId") String homeId);
+
+
+
 }

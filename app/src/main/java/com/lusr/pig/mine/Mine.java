@@ -46,6 +46,7 @@ public class Mine extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
+        Log.e("data again","data");
         if (mRootView == null) {
             //任意一个layout对象，比如让message的layout对象，MineFragmendt的layout对象
             mRootView = inflater.inflate(R.layout.mine, container, false);
@@ -128,5 +129,36 @@ public class Mine extends Fragment implements View.OnClickListener {
                 getActivity().finish();
                 break;
         }
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //        通过roomId进行加载
+        Call<ResponseBody> responseBodyCall = HttpMethods.getInstance()
+                .getAlarmList();
+
+        responseBodyCall.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    String res = response.body().string();
+                    GsonBuilder gsonBuilder = new GsonBuilder().disableHtmlEscaping();
+                    Gson gson = gsonBuilder.create();
+                    RoomAllBean[] roomAllBean = gson.fromJson(res, RoomAllBean[].class);
+
+                    int len = roomAllBean.length;
+                    badgeViewUtil.setCount(len);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(getActivity(), "请稍后", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
