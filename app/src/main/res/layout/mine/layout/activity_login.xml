@@ -4,16 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".mine.Login">
 
+    <ImageView
+        android:id="@+id/head"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="30dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/jnu" />
 
     <!--最正常的登录-->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <!---->
         <EditText
             android:id="@+id/acount"
             android:layout_width="match_parent"
@@ -21,7 +30,9 @@
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:background="@drawable/textview_border"
+            android:drawableLeft="@drawable/username"
             android:hint="输入账号"
+            android:paddingLeft="7dp"
             android:textAlignment="center" />
 
         <EditText
@@ -31,10 +42,12 @@
             android:layout_below="@id/acount"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="30dp"
-            android:inputType="textPassword"
             android:layout_marginRight="50dp"
             android:background="@drawable/textview_border"
+            android:drawableLeft="@drawable/password"
             android:hint="输入密码"
+            android:inputType="textPassword"
+            android:paddingLeft="7dp"
             android:textAlignment="center" />
 
         <Button
@@ -45,17 +58,21 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="50dp"
-            android:text="登录" />
+            android:background="@color/buttonColor"
+            android:text="登录"
+            android:textColor="@color/buttonTextCollor" />
 
         <TextView
             android:id="@+id/changePassWord"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_below="@id/login"
-            android:layout_marginLeft="50dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="5dp"
-            android:textSize="19sp"
-            android:text="修改密码" />
+            android:layout_marginRight="50dp"
+            android:text="修改密码"
+            android:textSize="16sp" />
+
     </RelativeLayout>
 
 </LinearLayout>

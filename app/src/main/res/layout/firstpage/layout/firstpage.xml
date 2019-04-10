@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/home_nine_explore" />
+                android:src="@drawable/toptop" />
 
             <Button
                 android:id="@+id/addHome"
@@ -38,6 +38,8 @@
                 android:textSize="18sp"
                 android:text="+   新增房间"
                 android:layout_marginLeft="30dp"
+                android:background="@color/buttonColor"
+                android:textColor="@color/buttonTextCollor"
                 android:layout_marginRight="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp" />

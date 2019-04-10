@@ -7,8 +7,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
         android:text="个人中心"
         android:textSize="27dp" />
 
@@ -18,8 +18,9 @@
         android:background="#B0B0C4" />
 
     <LinearLayout
+        android:id="@+id/sss"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="170dp"
         android:layout_marginTop="19dp"
         android:orientation="vertical">
 
@@ -32,6 +33,7 @@
             android:src="@drawable/chat_girl" />
 
         <TextView
+            android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -62,15 +64,15 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:text="新消息提醒"
-            android:textSize="26sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/sysNews"
-            android:text="  "
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/ss"
-            android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:text="  " />
 
         <ImageView
             android:id="@+id/im4"
@@ -102,7 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:text="修改密码"
-            android:textSize="26sp" />
+            android:textSize="24sp" />
 
         <ImageView
             android:id="@+id/im3"
@@ -135,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:text="用户反馈"
-            android:textSize="26sp" />
+            android:textSize="24sp" />
 
         <ImageView
             android:id="@+id/im1"
@@ -160,10 +162,11 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="60dp"
-        android:background="#E1E1EE"
-        android:textSize="19sp"
-        android:text="退出登录" />
+        android:background="@color/buttonColor"
+        android:text="退出登录"
+        android:textColor="@color/buttonTextCollor"
+        android:textSize="19sp" />
 
 </LinearLayout>

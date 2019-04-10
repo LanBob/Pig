@@ -13,6 +13,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -48,6 +49,7 @@ public class Warn extends AppCompatActivity {
     private Button sysNews;
     BadgeTextView badgeTextView;
     BadgeViewUtil badgeViewUtil;
+    TextView count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,7 @@ public class Warn extends AppCompatActivity {
 
     private void init() {
         homeList = new ArrayList<>();
+        count = findViewById(R.id.count);
 //        homeList = new ArrayList<>();
 //        for (int i = 0; i < 10; ++i) {
 //            Home home = new Home();
@@ -77,7 +80,7 @@ public class Warn extends AppCompatActivity {
 //            home.setHomeStatus(0);
 //            homeList.add(home);
 //        }
-        badgeTextView.setTargetView(sysNews);
+        badgeTextView.setTargetView(count);
 //        badgeTextView.setBadgeCount(10);
         badgeViewUtil = badgeTextView.setmDefaultTopPadding(5).setmDefaultRightPadding(5);
 //        badgeViewUtil.setCount(10);
@@ -85,6 +88,7 @@ public class Warn extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Warn.this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         warnList.setLayoutManager(linearLayoutManager);
+        warnList.setNestedScrollingEnabled(false);
 
         adapter = new Com_Adapter<Home>(Warn.this, R.layout.warnitem, homeList) {
 

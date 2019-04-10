@@ -9,4 +9,6 @@
 
     <!--toolbar-->
     <color name="barcolor">#2BA9FF</color>
+    <color name="buttonColor">#2BA9FF</color>
+    <color name="buttonTextCollor">#EDF5F4</color>
 </resources>

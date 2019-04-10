@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lusr.pig.MainActivity;
+import com.lusr.pig.MainApplication;
 import com.lusr.pig.R;
 import com.lusr.pig.Util.StringUtil;
 import com.lusr.pig.Util.netWork.HttpMethods;
@@ -61,6 +62,12 @@ public class Login extends AppCompatActivity {
         actionBar.setTitle("登录");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
+        if(MainApplication.isLogin()){
+            Intent intent = new Intent(Login.this, MainActivity.class);
+//            MainApplication.setLogin(true);
+            startActivity(intent);
+            finish();
+        }
     }
 
     @OnClick({ R.id.login, R.id.changePassWord})
@@ -72,10 +79,9 @@ public class Login extends AppCompatActivity {
                 break;
             case R.id.login:
 
-                String userNameText = acount.getText().toString();
+                final String userNameText = acount.getText().toString();
                 String passWordText = passWord.getText().toString();
                 if (StringUtil.isEmpty(userNameText) || StringUtil.isEmpty(passWordText)) {
-//                    Toast.makeText(Login.this, "登录", Toast.LENGTH_SHORT).show();
                 } else {
 
                     Call<ResponseBody> call = HttpMethods.getInstance()
@@ -88,6 +94,8 @@ public class Login extends AppCompatActivity {
                                 String user = response.body().string();
                                 if (user != null && !"".equals(user)) {
                                     Intent intent = new Intent(Login.this, MainActivity.class);
+                                    MainApplication.setLogin(true);
+                                    MainApplication.setUserNmae(userNameText);
                                     startActivity(intent);
                                     finish();
                                 } else {
@@ -105,14 +113,6 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "请稍后", Toast.LENGTH_SHORT).show();
                         }
                     });
-
-//                    if ("1158".equals(passWordText)) {
-//                        Intent intent = new Intent(Login.this, MainActivity.class);
-//                        startActivity(intent);
-//                        finish();
-//                    } else {
-//                        Toast.makeText(Login.this, "请检查输入", Toast.LENGTH_SHORT).show();
-//                    }
                 }
 
                 break;

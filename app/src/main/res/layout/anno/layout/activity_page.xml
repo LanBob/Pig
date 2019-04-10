@@ -22,8 +22,8 @@
         android:layout_below="@id/title"
         android:layout_marginLeft="50dp"
         android:text="发布时间:1996-11-11"
-        android:layout_marginTop="20dp"
-        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -34,8 +34,8 @@
         android:layout_toRightOf="@id/time"
         android:layout_marginLeft="50dp"
         android:text="阅读量:10"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="50dp"
         android:text="  他竟然他竟然是马他他竟然是马儿儿子他竟然是马儿儿子他竟然是马儿儿子他竟然是马儿儿子竟然是马儿儿子他竟然是马儿儿子儿他竟然是马儿儿子儿子他竟然是马儿儿子是马儿儿子 "
         android:textSize="19dp" />

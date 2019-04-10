@@ -52,6 +52,7 @@
             android:textSize="17sp"
             android:textColor="#159BD6"
             android:text="取消警报"
+            android:layout_marginBottom="5dp"
             android:layout_width="110dp"
             android:layout_height="50dp" />
 
@@ -63,6 +64,7 @@
             android:layout_toRightOf="@id/removeWarn"
             android:textColor="#159BD6"
             android:text="查看详情"
+            android:layout_marginBottom="5dp"
             android:layout_width="110dp"
             android:layout_height="50dp" />
 

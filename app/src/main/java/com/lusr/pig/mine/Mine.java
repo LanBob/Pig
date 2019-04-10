@@ -18,6 +18,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.itingchunyu.badgeview.BadgeTextView;
 import com.itingchunyu.badgeview.BadgeViewUtil;
+import com.lusr.pig.MainApplication;
 import com.lusr.pig.R;
 import com.lusr.pig.Util.StringUtil;
 import com.lusr.pig.Util.netWork.HttpMethods;
@@ -42,6 +43,7 @@ public class Mine extends Fragment implements View.OnClickListener {
     private TextView sysNews;
     BadgeTextView badgeTextView;
     BadgeViewUtil badgeViewUtil;
+    private TextView userName;
 
     @Nullable
     @Override
@@ -57,6 +59,8 @@ public class Mine extends Fragment implements View.OnClickListener {
             sysNews = mRootView.findViewById(R.id.sysNews);
             badgeTextView = new BadgeTextView(getActivity());
             badgeTextView.setTargetView(sysNews);
+            userName = mRootView.findViewById(R.id.userName);
+            userName.setText(MainApplication.getUserNmae());
             badgeViewUtil = badgeTextView.setmDefaultTopPadding(5).setmDefaultRightPadding(5);
 //            badgeViewUtil.setCount(10);
 
@@ -125,6 +129,8 @@ public class Mine extends Fragment implements View.OnClickListener {
             case R.id.logOut:
                 Toast.makeText(getContext(),"退出登录",Toast.LENGTH_SHORT).show();
                 Intent intent2 = new Intent(getActivity(),Login.class);
+                MainApplication.setLogin(false);
+                MainApplication.setUserNmae("");
                 getActivity().startActivity(intent2);
                 getActivity().finish();
                 break;

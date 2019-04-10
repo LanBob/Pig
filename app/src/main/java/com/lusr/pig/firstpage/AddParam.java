@@ -2,11 +2,13 @@ package com.lusr.pig.firstpage;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
@@ -60,12 +62,19 @@ public class AddParam extends AppCompatActivity {
     RecyclerView.Adapter adapter;
     String homeId;
     String roomNum;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_param);
         ButterKnife.bind(this);
+
+        actionBar = getSupportActionBar();
+        actionBar.setTitle("添加参数");
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
+
         list1 = new ArrayList<>();
         init();
 
@@ -109,6 +118,7 @@ public class AddParam extends AppCompatActivity {
         ParamList.setAdapter(adapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(AddParam.this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        ParamList.setNestedScrollingEnabled(false);
         ParamList.setLayoutManager(linearLayoutManager);
 
     }
@@ -123,6 +133,7 @@ public class AddParam extends AppCompatActivity {
                 if(name == null || value == null || "".equals(name) || "".equals(value) || !StringUtil.isInteger(value)){
                     Toast.makeText(AddParam.this,"请检查输入",Toast.LENGTH_SHORT).show();
                 }else {
+                    Toast.makeText(AddParam.this,"新增" + name +"，限制值为" + value,Toast.LENGTH_SHORT).show();
                     int flag = 0 ;
                     for(int i = 0;i<list1.size();++i){
                         if(name.equals(list1.get(i).getConditionName())){
@@ -140,6 +151,7 @@ public class AddParam extends AppCompatActivity {
                         homeParam.setConditionLimit(Integer.valueOf(value) + "");
                         list1.add(homeParam);
                     }
+
                     adapter.notifyDataSetChanged();
                 }
                 break;
@@ -161,5 +173,16 @@ public class AddParam extends AppCompatActivity {
                 });
                 break;
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: //对用户按home icon的处理，本例只需关闭activity，就可返回上一activity，即主activity。
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

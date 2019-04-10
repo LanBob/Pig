@@ -7,136 +7,154 @@
     android:orientation="vertical"
     tools:context=".firstpage.AddParam">
 
-    <TextView
-        android:id="@+id/roomNames"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="15dp"
-        android:text="房间号：XXX"
-        android:textSize="18sp" />
-
-    <View
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="30dp"
-        android:background="#7E8F8D" />
+        android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/choose"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp">
-
-        <TextView
-            android:id="@+id/addName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="新增参数名："
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/inputName"
+        <LinearLayout
+            android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@id/addName"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="40dp"
-            android:background="@drawable/textview_border"
-            android:hint="参数名称"
-            android:textAlignment="center" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/roomNames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:text="房间号：XXX"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:background="#7E8F8D" />
+
+            <RelativeLayout
+                android:id="@+id/choose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:id="@+id/addName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="新增环境名："
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/inputName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/addName"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="40dp"
+                    android:background="@drawable/textview_border"
+                    android:hint="环境名称"
+                    android:textAlignment="center" />
 
 
-        <TextView
-            android:id="@+id/addPa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/inputName"
-            android:layout_marginLeft="30dp"
-            android:text="新增参数限制值："
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/addPa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/inputName"
+                    android:layout_marginLeft="30dp"
+                    android:text="限制值："
+                    android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/inputValue"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@id/addPa"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="40dp"
-            android:background="@drawable/textview_border"
-            android:hint="参数限制值"
-            android:textAlignment="center" />
+                <EditText
+                    android:id="@+id/inputValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/addPa"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="40dp"
+                    android:background="@drawable/textview_border"
+                    android:hint="环境限制值"
+                    android:textAlignment="center" />
 
-        <Button
-            android:id="@+id/conform"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@+id/inputValue"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="40dp"
-            android:text="确定新增"
-            android:textSize="19sp" />
+                <Button
+                    android:id="@+id/conform"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/inputValue"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="40dp"
+                    android:background="@color/buttonColor"
+                    android:textColor="@color/buttonTextCollor"
+                    android:text="确定新增"
+                    android:textSize="19sp" />
 
-    </RelativeLayout>
+            </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="#7E8F8D" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="#7E8F8D" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="45dp"
-        android:text="选择参数如下"
-        android:textSize="18sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="45dp"
+                android:text="选择环境如下"
+                android:textSize="18sp" />
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/paramName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="9dp"
-            android:text="参数名"
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/paramName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="9dp"
+                    android:text="环境名"
+                    android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/ParamLimitValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="9dp"
-            android:layout_toRightOf="@id/paramName"
-            android:text="限制值"
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/ParamLimitValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toRightOf="@id/paramName"
+                    android:text="限制值"
+                    android:textSize="18sp" />
 
-    </RelativeLayout>
+            </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/ParamList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/ParamList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/send"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:textSize="19sp"
-        android:text="上传" />
+            <Button
+                android:id="@+id/send"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/buttonColor"
+                android:textColor="@color/buttonTextCollor"
+                android:text="完成新增"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
