@@ -4,8 +4,17 @@ public class HomeParam {
     private String homeId;
     private String conditionName;
     private String conditionLimit;
+    private String conditionMinLimit;
     private String conditionData;
     private int status;
+
+    public String getConditionMinLimit() {
+        return conditionMinLimit;
+    }
+
+    public void setConditionMinLimit(String conditionMinLimit) {
+        this.conditionMinLimit = conditionMinLimit;
+    }
 
     public String getHomeId() {
         return homeId;

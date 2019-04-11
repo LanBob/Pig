@@ -162,56 +162,9 @@ public class HttpMethods {
         return service.deleteAlarm(homeId);
     }
 
-//    /**
-//     * 新增参数
-//     * @param id
-//     * @param homeParam
-//     * @return
-//     */
-//    public Call<ResponseBody> addHomeParam(String id, HomeParam homeParam){
-//        String json = new Gson().toJson(homeParam);
-//        return service.addHomeParam(id,json);
-//    }
-
-
-
-
-
-//
-//
-//    /**
-//     * 登录
-//     *
-//     * @param map
-//     * @param observer
-//     */
-//    public void login_check(Map map, Observer observer) {
-//        String json = new Gson().toJson(map);
-//        service.login_check(json, 1)
-//                .subscribeOn(Schedulers.io())
-//                .unsubscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(observer);
-//    }
-//
-//    public void changePassword(Map map, Observer observer) {
-//        String json = new Gson().toJson(map);
-//        service.login_check(json, 3)
-//                .subscribeOn(Schedulers.io())
-//                .unsubscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(observer);
-//    }
-//
-//    public void loginByMessageCode(Map map, Observer observer) {
-//        String json = new Gson().toJson(map);
-//        service.login_check(json, 2)
-//                .subscribeOn(Schedulers.io())
-//                .unsubscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(observer);
-//    }
-//
+    public Call<ResponseBody> delete(String id){
+        return service.delete(id);
+    }
 
 
 

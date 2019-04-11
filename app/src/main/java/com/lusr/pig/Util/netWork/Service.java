@@ -86,11 +86,14 @@ public interface Service {
     @GET("Home/getAlarmList")
     Call<ResponseBody> getAlarmList();
 
-    @FormUrlEncoded
-    @POST("Home/deleteAlarm")
+//    @FormUrlEncoded
+    @POST("Home/deleteAlarm/{homeId}")
     @Headers({"Content-Type:application/json;charset=UTF-8"})
-    Call<ResponseBody> deleteAlarm(@Field("homeId") String homeId);
+    Call<ResponseBody> deleteAlarm(@Path("homeId") String homeId);
 
 
+    @POST("Home/deleteHome/{id}")
+    @Headers({"Content-Type:application/json;charset=UTF-8"})
+    Call<ResponseBody> delete(@Path("id") String id);
 
 }

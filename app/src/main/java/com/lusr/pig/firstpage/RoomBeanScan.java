@@ -58,6 +58,9 @@ public class RoomBeanScan extends AppCompatActivity {
     @BindView(R.id.addPatam)
     public Button addPatam;
 
+    @BindView(R.id.delete)
+    public Button delete;
+
     @BindView(R.id.paramData)
     RecyclerView paramData;
 
@@ -101,7 +104,6 @@ public class RoomBeanScan extends AppCompatActivity {
                     RoomAllBean roomAllBean = gson.fromJson(res, RoomAllBean.class);
                     Home home = roomAllBean.getHome();
                     if(home != null){
-
                         roomNum.setText("房间号:"+home.getHomeNum());
 
                         if(home.getHomeType() == 0){
@@ -150,6 +152,11 @@ public class RoomBeanScan extends AppCompatActivity {
                     }else {
                         holder.setText(R.id.ParamLimitValue, homeParam.getConditionLimit());
                     }
+                    if(homeParam.getConditionMinLimit() == null){
+                        holder.setText(R.id.minvalue, "无");
+                    }else {
+                        holder.setText(R.id.minvalue, homeParam.getConditionMinLimit());
+                    }
                     holder.setText(R.id.ParamCurrentValue, homeParam.getConditionData());
                 }
             }
@@ -160,7 +167,7 @@ public class RoomBeanScan extends AppCompatActivity {
         paramData.setLayoutManager(linearLayoutManager);
     }
 
-    @OnClick({R.id.addPatam})
+    @OnClick({R.id.addPatam,R.id.delete})
     public void click(View view) {
         switch (view.getId()) {
 
@@ -178,6 +185,30 @@ public class RoomBeanScan extends AppCompatActivity {
                 }
                 startActivity(intent1);
 //                finish();
+                break;
+            case R.id.delete:
+                Call<ResponseBody> responseBodyCall = HttpMethods.getInstance().delete(roomId);
+                responseBodyCall.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        try {
+                            String data = response.body().string();
+                            if( data != null && !"".equals(data) && "删除成功".equals(data)){
+                                Toast.makeText(RoomBeanScan.this,"删除成功",Toast.LENGTH_SHORT).show();
+                                finish();
+                            }else {
+                                Toast.makeText(RoomBeanScan.this,"请稍后",Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(RoomBeanScan.this,"请稍后",Toast.LENGTH_SHORT).show();
+                    }
+                });
                 break;
         }
     }

@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/inputName"
                     android:layout_marginLeft="30dp"
-                    android:text="限制值："
+                    android:text="环境最大值："
                     android:textSize="18sp" />
 
                 <EditText
@@ -79,14 +79,36 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="40dp"
                     android:background="@drawable/textview_border"
-                    android:hint="环境限制值"
+                    android:hint="最大限制值"
+                    android:textAlignment="center" />
+
+
+                <TextView
+                    android:id="@+id/addmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/inputValue"
+                    android:layout_marginLeft="30dp"
+                    android:text="环境最小值："
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/inputMin"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/addmin"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="40dp"
+                    android:background="@drawable/textview_border"
+                    android:hint="最小限制值"
                     android:textAlignment="center" />
 
                 <Button
                     android:id="@+id/conform"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:layout_below="@+id/inputValue"
+                    android:layout_below="@+id/inputMin"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="40dp"
@@ -127,14 +149,24 @@
                     android:text="环境名"
                     android:textSize="18sp" />
 
+                <!--android:layout_toRightOf="@id/paramName"-->
                 <TextView
                     android:id="@+id/ParamLimitValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="100dp"
                     android:layout_marginTop="9dp"
-                    android:layout_toRightOf="@id/paramName"
-                    android:text="限制值"
+                    android:text="最大值"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/minvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="170dp"
+                    android:layout_marginTop="9dp"
+                    android:text="最小值"
                     android:textSize="18sp" />
 
             </RelativeLayout>
@@ -151,6 +183,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:background="@color/buttonColor"
+                android:layout_marginBottom="40dp"
                 android:textColor="@color/buttonTextCollor"
                 android:text="完成新增"
                 android:textSize="19sp" />

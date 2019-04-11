@@ -150,4 +150,38 @@ public class FirstPage extends Fragment {
         roomList.setAdapter(roomListAdapter);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Call<ResponseBody> responseBodyCall = HttpMethods.getInstance()
+                .QueryHomeList();
+        responseBodyCall.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                String json = null;
+                try {
+                    json = response.body().string();
+                    if (json != null || "".equals(json.trim())) {
+
+                        List<Home> homes = StringUtil.getObjectList(json, Home.class);
+                        roomListBean.clear();
+                        for (Home h :
+                                homes) {
+                            roomListBean.add(h);
+                        }
+
+                    }
+                    roomListAdapter.notifyDataSetChanged();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(getActivity(), "请稍后", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

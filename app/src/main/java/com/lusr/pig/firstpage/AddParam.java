@@ -43,6 +43,9 @@ public class AddParam extends AppCompatActivity {
     EditText inputName;
     @BindView(R.id.inputValue)
     EditText inputValue;
+
+    @BindView(R.id.inputMin)
+    EditText inputMin;
     @BindView(R.id.roomNames)
     TextView roomNames;
 
@@ -104,6 +107,11 @@ public class AddParam extends AppCompatActivity {
                     }else {
                         holder.setText(R.id.ParamLimitValue, homeParam.getConditionLimit());
                     }
+                    if(homeParam.getConditionMinLimit() == null){
+                        holder.setText(R.id.min,"无");
+                    }else {
+                        holder.setText(R.id.min, homeParam.getConditionMinLimit());
+                    }
                     holder.itemView.findViewById(R.id.delete).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -129,11 +137,12 @@ public class AddParam extends AppCompatActivity {
             case R.id.conform:
                 String name = inputName.getText().toString();
                 String value = inputValue.getText().toString();
-
-                if(name == null || value == null || "".equals(name) || "".equals(value) || !StringUtil.isInteger(value)){
+                String min = inputMin.getText().toString();
+                //华为不理他，网易
+                if(name == null || value == null ||min == null || "".equals(name) || "".equals(value) || !StringUtil.isInteger(value) ||!StringUtil.isInteger(min)){
                     Toast.makeText(AddParam.this,"请检查输入",Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(AddParam.this,"新增" + name +"，限制值为" + value,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddParam.this,"新增" + name,Toast.LENGTH_SHORT).show();
                     int flag = 0 ;
                     for(int i = 0;i<list1.size();++i){
                         if(name.equals(list1.get(i).getConditionName())){
@@ -148,6 +157,7 @@ public class AddParam extends AppCompatActivity {
                         homeParam.setConditionName(name);
                         homeParam.setHomeId(homeId);
                         homeParam.setStatus(0);
+                        homeParam.setConditionMinLimit(Integer.valueOf(min) + "");
                         homeParam.setConditionLimit(Integer.valueOf(value) + "");
                         list1.add(homeParam);
                     }

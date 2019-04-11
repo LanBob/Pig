@@ -16,16 +16,24 @@
         android:id="@+id/ParamLimitValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:text="限制值"
+        android:layout_marginLeft="100dp"
+        android:text="最大值"
         android:textSize="18sp" />
 
+
+    <TextView
+        android:id="@+id/minvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:text="最小值"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/ParamCurrentValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="270dp"
+        android:layout_marginLeft="240dp"
         android:text="当前值"
         android:textSize="18sp" />
 

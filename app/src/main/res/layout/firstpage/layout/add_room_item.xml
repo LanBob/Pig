@@ -10,25 +10,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:text="二氧化碳"
+        android:text="二氧化"
         android:textSize="18sp" />
 
+    <!--android:layout_toRightOf="@id/paramName"-->
     <TextView
         android:layout_marginTop="9dp"
         android:id="@+id/ParamLimitValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_toRightOf="@id/paramName"
-        android:text="限制值"
+        android:layout_marginLeft="100dp"
+        android:text="最大值"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:layout_marginTop="9dp"
+        android:id="@+id/min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:text="最小值"
         android:textSize="18sp" />
 
     <Button
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@id/ParamLimitValue"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/min"
         android:text="删除" />
 
     <View

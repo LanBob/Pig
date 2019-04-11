@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.lusr.pig.R;
@@ -31,8 +32,9 @@ public class AddHome extends AppCompatActivity {
 
 //    @BindView(R.id.addName)
 //    EditText addName;
-    @BindView(R.id.addPigType)
-    EditText addPigType;
+//    @BindView(R.id.addPigType)
+//    EditText addPigType;
+
     @BindView(R.id.pigNum)
     EditText pigNum;
     @BindView(R.id.homeSize)
@@ -43,6 +45,9 @@ public class AddHome extends AppCompatActivity {
     Button add;
 
     ActionBar actionBar;
+    @BindView(R.id.rgroup)
+    RadioGroup rgroup;
+    String pp = "公猪";
 
 
     @Override
@@ -54,6 +59,22 @@ public class AddHome extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         ButterKnife.bind(this);
+        rgroup = (RadioGroup) findViewById(R.id.rgroup);
+
+        rgroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup rg, int checkedId) {
+                switch (checkedId) {
+                    case R.id.ch1:
+                        pp = "公猪";
+                        break;
+                    case R.id.ch2:
+                        pp = "母猪";
+                        break;
+                }
+            }
+        });
+
     }
 
     @OnClick({R.id.add})
@@ -61,23 +82,21 @@ public class AddHome extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.add:
 //                String name = addName.getText().toString();
-                String type = addPigType.getText().toString();
+//                String type = addPigType.getText().toString();
                 String pignum = pigNum.getText().toString();
                 String size = homeSize.getText().toString();
-                if ( StringUtil.isEmpty(type) || StringUtil.isEmpty(pignum) || StringUtil.isEmpty(size) || !StringUtil.isInteger(size) || !StringUtil.isInteger(pignum)) {
+                if ( StringUtil.isEmpty(pignum) || StringUtil.isEmpty(size) || !StringUtil.isInteger(size) || !StringUtil.isInteger(pignum)) {
                     Toast.makeText(AddHome.this, "请检查输入", Toast.LENGTH_SHORT).show();
-                }else {
-                    if (!"公猪".equals(type) && !"母猪".equals(type)) {
-                        Toast.makeText(AddHome.this, "请检查猪的类型", Toast.LENGTH_SHORT).show();
-                    }else {
+                } else {
+
                         Home home = new Home();
                         home.setHomeStatus(0);
                         home.setPigNum(Integer.valueOf(pignum));
                         home.setHomeSize(Integer.valueOf(size));
                         home.setHomeLink("");
-                        if ("公猪".equals(type)){
+                        if ("公猪".equals(pp)) {
                             home.setHomeType(1);
-                        }else {
+                        } else {
                             home.setHomeType(0);
                         }
                         home.setHomeNum(StringUtil.getRandom());
@@ -95,16 +114,16 @@ public class AddHome extends AppCompatActivity {
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
-                                if("Success".equals(result )){
+                                if ("Success".equals(result)) {
                                     try {
                                         String data = response.body().string();
-                                        Log.e("data",data);
+                                        Log.e("data", data);
                                         Toast.makeText(AddHome.this, "成功", Toast.LENGTH_LONG).show();
                                         finish();
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
-                                }else {
+                                } else {
                                     Toast.makeText(AddHome.this, "出错啦，请联系管理员...", Toast.LENGTH_SHORT).show();
                                 }
 
@@ -115,9 +134,9 @@ public class AddHome extends AppCompatActivity {
                                 Toast.makeText(AddHome.this, "请稍后", Toast.LENGTH_SHORT).show();
                             }
                         });
-                    }
+
                 }
-            break;
+                break;
         }
     }
 

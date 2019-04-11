@@ -18,11 +18,11 @@
             android:orientation="vertical">
 
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/toptop" />
+            <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="180dp"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@drawable/toptop" />-->
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -97,8 +97,8 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="60dp"
                 android:background="@color/buttonColor"
-                android:textColor="@color/buttonTextCollor"
                 android:text="新增参数"
+                android:textColor="@color/buttonTextCollor"
                 android:textSize="18sp" />
 
             <View
@@ -130,19 +130,25 @@
                     android:textSize="19sp" />
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="最大值"
+                    android:textSize="19sp" />
+
+                <TextView
                     android:id="@+id/bbb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="148dp"
-                    android:text="限制值"
+                    android:layout_marginLeft="170dp"
+                    android:text="最小值"
                     android:textSize="19sp" />
-
 
                 <TextView
                     android:id="@+id/ccc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="268dp"
+                    android:layout_marginLeft="240dp"
                     android:text="当前值"
                     android:textSize="19sp" />
             </RelativeLayout>
@@ -151,9 +157,21 @@
                 android:id="@+id/paramData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:layout_marginRight="30dp" />
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="30dp" />
 
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="60dp"
+                android:background="@color/buttonColor"
+                android:text="删除此房间"
+                android:textColor="@color/buttonTextCollor"
+                android:layout_marginBottom="50dp"
+                android:textSize="18sp" />
 
         </LinearLayout>
     </ScrollView>

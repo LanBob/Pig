@@ -148,7 +148,8 @@ public class Anno extends Fragment {
     ///=================Search
     private class ImageLoopAdapter extends LoopPagerAdapter {
         int[] imgs = new int[]{
-                R.drawable.top
+                R.drawable.top,
+                R.drawable.top_top
 //                R.drawable.top3,
 //                R.drawable.home_nine_explore
         };
