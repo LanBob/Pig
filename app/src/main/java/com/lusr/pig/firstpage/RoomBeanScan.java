@@ -265,7 +265,7 @@ public class RoomBeanScan extends AppCompatActivity {
                         }
                     adapter.notifyDataSetChanged();
                     if (homeDetailList== null || homeDetailList.length == 0) {
-                        Toast.makeText(RoomBeanScan.this, "当前房间未参数设置", Toast.LENGTH_LONG).show();
+                        Toast.makeText(RoomBeanScan.this, "当前房间未设置数据", Toast.LENGTH_LONG).show();
                     }
                     Log.e("restart","size" + homeParams.size());
                 } catch (IOException e) {

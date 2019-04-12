@@ -46,7 +46,7 @@ public class FeedBack extends AppCompatActivity {
                 if (StringUtil.isEmpty(feedback_titleText) || StringUtil.isEmpty(feedback_bodyText)) {
                     Toast.makeText(FeedBack.this, "请检查输入", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(FeedBack.this, "已经收到您的返回！感谢您的反馈!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FeedBack.this, "已经收到您的反馈！感谢您的反馈!", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 break;

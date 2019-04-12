@@ -111,23 +111,23 @@ public class Mine extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.news:
-                Toast.makeText(getContext(),"新消息通知",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(),"新消息通知",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(),Warn.class);
                 getActivity().startActivity(intent);
                 break;
             case R.id.changePassWord:
-                Toast.makeText(getContext(),"修改密码",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(),"修改密码",Toast.LENGTH_SHORT).show();
                 Intent intent1 =  new Intent(getActivity(),ChangePassWord.class);
                 getActivity().startActivity(intent1);
                 break;
             case R.id.feedBack:
-                Toast.makeText(getContext(),"用户反馈",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(),"用户反馈",Toast.LENGTH_SHORT).show();
                 Toast.makeText(getContext(),"修改密码",Toast.LENGTH_SHORT).show();
                 Intent intent3 =  new Intent(getActivity(),FeedBack.class);
                 getActivity().startActivity(intent3);
                 break;
             case R.id.logOut:
-                Toast.makeText(getContext(),"退出登录",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(),"退出登录",Toast.LENGTH_SHORT).show();
                 Intent intent2 = new Intent(getActivity(),Login.class);
                 MainApplication.setLogin(false);
                 MainApplication.setUserNmae("");
